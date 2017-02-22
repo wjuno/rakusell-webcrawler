@@ -20,7 +20,7 @@ class ProductDetailRecord(object):
         self.description = description
 
     def save(self):
-        cur.execute("INSERT INTO electronic_products_details (product_price, product_url, category, condition, avg_rating, review, description) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id", (
+        cur.execute("INSERT INTO details (product_price, product_url, category, condition, avg_rating, review, description) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id", (
             self.product_price,
             self.product_url,
             self.category,
@@ -35,22 +35,5 @@ class ProductDetailRecord(object):
         # ))
         conn.commit()
         return cur.fetchone()[0]
-
-
-if __name__ == '__main__':
-
-    # setup tables
-    cur.execute("DROP TABLE IF EXISTS electronic_products_details")
-    cur.execute("""CREATE TABLE electronic_products_details (
-        id          serial PRIMARY KEY,
-        product_price       text,
-        product_url    text,
-        category text,
-        condition text,
-        avg_rating text,
-        review text,
-        description text
-    );""")
-    conn.commit()
 
 

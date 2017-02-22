@@ -11,6 +11,12 @@
 * **Cameras & Camcorders Categories**
 	* DSLR Cameras
 
+* **Televisions**
+	* LED TV
+
+* **Headphones**
+	* Bluetooth Headphones
+
 
 * **Go to the rakutenscrapy/rakutenscrapy/spiders folder**
 	* Issue this command will use Scrapy to crawl : 

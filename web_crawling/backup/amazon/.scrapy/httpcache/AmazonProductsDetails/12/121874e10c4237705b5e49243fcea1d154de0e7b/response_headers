@@ -1,0 +1,11 @@
+Content-Encoding: gzip
+Accept-Ranges: bytes
+Strict-Transport-Security: max-age=47474747; includeSubDomains; preload
+Vary: Accept-Encoding,User-Agent
+Server: Server
+Last-Modified: Wed, 04 Jan 2017 19:59:04 GMT
+Etag: "c6778c66471ba8c9f91f5320dcad783b-gzip"
+X-Amz-Request-Id: 0059461C5949B2DB
+Date: Sun, 12 Feb 2017 04:28:36 GMT
+X-Frame-Options: SAMEORIGIN
+Content-Type: text/plain

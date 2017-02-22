@@ -7,9 +7,21 @@
 from models import ProductDetailRecord
 
 
-
 class RakutenscrapyPipeline(object):
     def process_item(self, item, spider):
+
+
+
+        # product = ProductDetailRecord(
+        #     p_id = item['p_id'],
+        #     merchant=item['merchant'],
+        #     product_name=item['product_name'],
+        #     product_img= item['product_img'],
+        #     product_url= item['product_url'],
+        #     brand = item['brand'],
+        #     sub_category = item['sub_category'],
+        #     main_category = item['main_category'])
+        # product.save()
 
     	product = ProductDetailRecord(
             product_price=item['product_price'],

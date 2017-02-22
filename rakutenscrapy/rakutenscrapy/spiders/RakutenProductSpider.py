@@ -8,6 +8,7 @@ import bs4
 import string
 from scrapy import Request
 from scrapy.selector import HtmlXPathSelector
+from random import randint
 
 
 
@@ -51,8 +52,7 @@ class RakutenSpider(scrapy.Spider):
      # DSLR Cameras > Professional DSLR CAMERAS - http://www.rakuten.com/loc/Professional-DSLR-Camera/85291.html?page={page}
      # DSLR Camera > BODY & LENS KITS - http://www.rakuten.com/loc/Body-Lens-Kits/85292.html?page={page}
 
-    start_urls = ''
-    
+    start_urls = 'http://www.rakuten.com/loc/bluetooth-headphones/85310.html?page={page}'
   
     def start_requests(self):
         index = 1
@@ -68,8 +68,8 @@ class RakutenSpider(scrapy.Spider):
         
         # RMB TO CHANGE !!!!!!!!!!!!!!!!!!!!!!!
         brand = ''
-        sub_category = ''
-        main_category = ''
+        sub_category = 'Bluetooth Headphones'
+        main_category = 'Headphones'
 
 
         XPATH_MERCHANT = '//div[@class="FabContainer product-lister"]//div[@class="merchant_name"]//text()'
@@ -93,7 +93,16 @@ class RakutenSpider(scrapy.Spider):
             PRODUCT_IMG = ' '.join(''.join(RAW_PRODUCT_IMG).encode('utf-8').split()) if RAW_PRODUCT_IMG else None
             PRODUCT_URL = ' '.join(''.join(RAW_PRODUCT_URL).encode('utf-8').split()) if RAW_PRODUCT_URL else None
 
+            # p_url = PRODUCT_URL
+            # p_url = p_url.split('.html')
+            # p_url = p_url[0].split('/')
+
+            # p_id = p_url[-1]
+
+
+
             items = RakutenscrapyItem()
+            items['p_id'] = randint(11099,1000000)
             items['merchant'] = MERCHANT
             items['product_name'] = PRODUCT_NAME
             items['product_img'] = PRODUCT_IMG

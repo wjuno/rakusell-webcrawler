@@ -19,7 +19,7 @@ class RakutenSpider(scrapy.Spider):
     start_urls = []
     
 
-    with open("product-url.txt", "rt") as f:
+    with open("product-url-tv-hp.txt", "rt") as f:
         start_urls = [url.strip() for url in f.readlines()]
 
 
